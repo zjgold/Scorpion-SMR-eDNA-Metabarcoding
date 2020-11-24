@@ -1,2 +1,0 @@
-"0","#Needed to make a metadata file that was distinct(), otherwise each sample gets duplicated in the spread"
-"0","metadata %>%  dplyr::select(-Seq_number) %>%  distinct() -> metadata"

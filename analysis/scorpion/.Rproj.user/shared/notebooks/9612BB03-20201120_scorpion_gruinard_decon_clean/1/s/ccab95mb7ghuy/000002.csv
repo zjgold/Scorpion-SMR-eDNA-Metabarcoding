@@ -1,4 +1,0 @@
-"0","ASV.table_used %>% "
-"0","  dplyr::group_by(Miseq_run, source) %>% "
-"0","  nest() %>% "
-"0","  pivot_wider(names_from=source, values_from=data) -> ASV.nested"

@@ -1,9 +1,0 @@
-"0","readRDS(file=here(""decontam"",""ASV.nested_final.RDS""))
-"
-"1","[38;5;246m# A tibble: 1 x 12[39m
-  Miseq_run Positives Samples Blanks contam.tibble Step1.cleaned.t… Step.2.low.read… Step3.tibble Step3.tibble.ed…
-  [3m[38;5;246m<fct>[39m[23m     [3m[38;5;246m<list>[39m[23m    [3m[38;5;246m<list>[39m[23m  [3m[38;5;246m<list>[39m[23m [3m[38;5;246m<list>[39m[23m        [3m[38;5;246m<list>[39m[23m           [3m[38;5;246m<list>[39m[23m           [3m[38;5;246m<list>[39m[23m       [3m[38;5;246m<list>[39m[23m          
-[38;5;250m1[39m c19_fish… [38;5;246m<tibble [0m… [38;5;246m<tibbl[0m… [38;5;246m<tibb[0m… [38;5;246m<tibble [3 ×[0m… [38;5;246m<tibble [6,336 [0m… [38;5;246m<tibble [6,336 [0m… [38;5;246m<tibble [6,[0m… [38;5;246m<tibble [6,187 [0m…
-[38;5;246m# … with 3 more variables: Step4.tibble [3m[38;5;246m<list>[38;5;246m[23m, Step4.tibble_edited [3m[38;5;246m<list>[38;5;246m[23m, Step5.tibble [3m[38;5;246m<list>[38;5;246m[23m[39m"
-"1","
-"

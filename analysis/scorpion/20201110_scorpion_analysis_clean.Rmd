@@ -1547,7 +1547,7 @@ setdiff(eDNA_step1_species,eDNA_step2_species) %>%  sort()
 #Functional Traits
 
 ```{r}
-functional_traits <- read.table(here("analysis","Output","20201110_functional_traits_all_species_only.csv"), header = 1, sep = ",", stringsAsFactors = F)
+functional_traits <- read.table(here("data","20201110_functional_traits_all_species_only.csv"), header = 1, sep = ",", stringsAsFactors = F)
 
  functional_traits %>%  as.tibble() %>% 
    filter(., Species !="") -> functional_traits_species_only

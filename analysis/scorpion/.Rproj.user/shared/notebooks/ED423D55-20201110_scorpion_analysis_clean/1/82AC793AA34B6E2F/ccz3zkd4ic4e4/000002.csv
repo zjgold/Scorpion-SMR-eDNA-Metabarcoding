@@ -1,4 +1,0 @@
-"0","physeq_obj.occ <- subset_samples(physeq_obj.occ,Site!=""Taylor"")"
-"0","physeq_obj.occ_reads <- subset_samples(physeq_obj.occ_reads, Site!=""Taylor"")"
-"0","physeq_obj.pre <- subset_samples(physeq_obj.pre,Site!=""Taylor"")"
-"0","physeq_obj.pre_reads <- subset_samples(physeq_obj.pre_reads, Site!=""Taylor"")"

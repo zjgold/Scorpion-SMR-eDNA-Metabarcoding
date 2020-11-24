@@ -1,6 +1,0 @@
-"0","dir.create(here(""decontam"",""Output_csv""))"
-"2","'/Users/zackgold/Documents/UCLA_phd/Projects/California/General_Channel_Islands/MPA_test_data/ms/plos_one/analysis/scorpion/decontam/Output_csv' already exists"
-"0","dir.create(here(""decontam"",""Output_R""))"
-"2","'/Users/zackgold/Documents/UCLA_phd/Projects/California/General_Channel_Islands/MPA_test_data/ms/plos_one/analysis/scorpion/decontam/Output_R' already exists"
-"0","dir.create(here(""decontam"",""Output_plots""))"
-"2","'/Users/zackgold/Documents/UCLA_phd/Projects/California/General_Channel_Islands/MPA_test_data/ms/plos_one/analysis/scorpion/decontam/Output_plots' already exists"
