@@ -1,0 +1,3 @@
+"0","  ASV.table_long %>% "
+"0","    filter(., str_detect(seq_number,""merged"")) %>% "
+"0","    filter(., !str_detect(seq_number,""unmerged"")) -> ASV.table_used"

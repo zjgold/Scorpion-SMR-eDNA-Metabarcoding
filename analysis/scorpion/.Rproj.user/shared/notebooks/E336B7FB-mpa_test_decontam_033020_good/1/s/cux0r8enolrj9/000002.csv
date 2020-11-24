@@ -1,0 +1,36 @@
+"0","```r
+ASV.nested$Blanks[[1]] %>% 
+  select(sample,Hash, nReads) -> blankers
+rbind(blankers, ASV.nested$Step.1.low.reads[[1]]) -> step.1.1
+
+step.1.1 %>% 
+pivot_wider(names_from=sample, values_from=nReads, values_fill = list(nReads =0)) -> step.1.1_wide
+
+step.1.1_wide %>%
+  mutate(seq_number=Hash) %>% 
+  left_join(Hash.key) %>%
+  select(-seq_number) -> step.1.1_wide
+
+as.data.frame(step.1.1_wide) -> step.1.1_wide
+
+step.1.1_decon <- decon(data=step.1.1_wide, numb.blanks = 5,numb.ind=as.vector(c(3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3)), taxa = T)
+
+step.1.1_decon$decon.table
+
+columns <- colnames(step.1.1_decon$decon.table)
+remove <- c(\"Hash\",\"sum.taxonomy\")
+
+gathercols <-  columns[! columns %in% remove] 
+
+# Convert to Long Data
+step.1.1_decon_clean <- gather(step.1.1_decon$decon.table, sample, nReads, gathercols, factor_key=TRUE)
+
+step.1.1_decon_clean %>% as.tibble() %>% 
+  select(-sum.taxonomy) %>% 
+  filter(., sample != \"Mean.blank\") %>% 
+  filter(., nReads >0) -> step.1.1_decon_clean_tibble
+class(step.1.1_decon_clean_tibble)
+
+ASV.nested %>% 
+  mutate(Step2.tibble = list(step.1.1_decon_clean_tibble)) -> ASV.nested
+```"

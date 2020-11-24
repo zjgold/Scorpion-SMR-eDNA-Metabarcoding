@@ -1,0 +1,13 @@
+"0","#Permanova
+broom::tidy(adonis(carnivore_rel_abun~ sampledf$Site+ sampledf$Location)$aov.tab)
+"
+"2","The following column names in ANOVA output were not recognized or transformed: SumsOfSqs, MeanSqs, F.Model, R2"
+"1","[38;5;246m# A tibble: 4 x 7[39m
+  term                 df SumsOfSqs MeanSqs F.Model    R2 p.value
+  [3m[38;5;246m<chr>[39m[23m             [3m[38;5;246m<dbl>[39m[23m     [3m[38;5;246m<dbl>[39m[23m   [3m[38;5;246m<dbl>[39m[23m   [3m[38;5;246m<dbl>[39m[23m [3m[38;5;246m<dbl>[39m[23m   [3m[38;5;246m<dbl>[39m[23m
+[38;5;250m1[39m sampledf$Site         2      1.30   0.649    3.55 0.208   0.001
+[38;5;250m2[39m sampledf$Location     6      1.65   0.275    1.50 0.264   0.005
+[38;5;250m3[39m Residuals            18      3.29   0.183   [31mNA[39m    0.528  [31mNA[39m    
+[38;5;250m4[39m Total                26      6.24  [31mNA[39m       [31mNA[39m    1      [31mNA[39m    "
+"1","
+"

@@ -1,0 +1,36 @@
+"0","```r
+
+ASV.nested$cleaned.tibble %>% as.data.frame() %>% 
+  group_by(sample) %>%
+  dplyr::summarise(tot = sum(nReads)) %>% 
+  arrange(desc(tot))-> all.reps
+
+# Visualize
+
+all.reps %>%  
+  pull(tot) -> reads.per.sample
+
+names(reads.per.sample) <- all.reps %>% pull(sample)  
+
+normparams.reads <- MASS::fitdistr(reads.per.sample, \"normal\")$estimate
+
+all.reps %>%  
+  mutate(prob = pnorm(tot, normparams.reads[1], normparams.reads[2])) -> all.reps
+
+#  probs <- pnorm(all_pairwise_distances, normparams[1], normparams[2])
+
+outliers <- all.reps %>% 
+  filter(prob < 0.05  & tot < normparams.reads[1]) # changed to 0.05 to save the two samples
+
+ASV.nested %>% 
+  mutate(Step.1.low.reads = purrr::map (cleaned.tibble, ~ filter(.,!sample %in% outliers$sample) %>% ungroup)) -> ASV.nested
+
+ASV.nested %>% 
+  transmute(Miseq_run, Summary.1 = purrr::map(Step.1.low.reads, ~ how.many(ASVtable = .,round = \"2.Low.nReads\"))) %>% 
+  left_join(ASV.summary) %>% 
+  bind_cols(ASV.summary) %>% 
+  mutate(Summary   = map2(Summary, Summary.1, bind_rows)) %>%
+  dplyr::select(-Summary.1) -> ASV.summary 
+
+ASV.summary$Summary
+```"

@@ -1,0 +1,8 @@
+"0","```r
+ASV.nested %>% 
+  ungroup() %>% 
+  dplyr::transmute(.,Miseq_run,Summary = purrr::map(Samples, ~ how.many(ASVtable = ., round = 0)))  -> ASV.summary
+ASV.summary$Summary
+```"
+"1","[[1]]
+"

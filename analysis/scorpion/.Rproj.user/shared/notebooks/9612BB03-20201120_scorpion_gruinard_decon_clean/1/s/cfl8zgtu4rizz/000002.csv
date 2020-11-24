@@ -1,0 +1,23 @@
+"0","ASV.nested %>% 
+  dplyr::select(Step3.tibble,Miseq_run) %>% 
+  unnest(Step3.tibble) %>% 
+  left_join(hash.key.updated) %>% 
+  left_join(metadata, by=c(""sample""=""New_name"")) %>% 
+  ungroup() %>% 
+  group_by(Site, sum.taxonomy) %>% 
+  summarise(meanreads = mean(nReads)) %>% 
+  dplyr::group_by(Site) %>%
+  mutate (Tot = sum(meanreads),
+          Row.sums = meanreads / Tot) %>% 
+  dplyr::group_by (sum.taxonomy) %>%
+  mutate (Colmax = max (Row.sums),
+          Normalized.reads = Row.sums / Colmax) %>% 
+  ungroup() %>% 
+  dplyr::select(Site,Normalized.reads, sum.taxonomy) %>% 
+  spread(., Site, Normalized.reads) %>% #convert to wide data format
+  replace(is.na(.), 0)  -> pre_wide
+"
+"2","Joining, by = ""seq_number""
+"
+"2","`summarise()` regrouping output by 'Site' (override with `.groups` argument)
+"

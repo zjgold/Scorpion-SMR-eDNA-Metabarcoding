@@ -1,0 +1,18 @@
+"0","```r
+
+ASV.nested %>% 
+  mutate (contam.tibble = purrr::map(Positives, 
+                              function(.x){
+                                .x %>%
+                                  ungroup() %>% 
+                                  group_by(sample) %>%
+                                  mutate (TotalReadsperSample = sum(nReads)) %>%
+                                  mutate (proportion = nReads/TotalReadsperSample) %>%
+                                  group_by(Hash) %>%
+                                  dplyr::summarise (vector_contamination = max(proportion))
+                                }) ) -> ASV.nested
+
+ASV.nested$contam.tibble %>% as.data.frame() %>% 
+  ggplot(aes(x= vector_contamination))+
+  geom_histogram()# Check how it looks like
+```"

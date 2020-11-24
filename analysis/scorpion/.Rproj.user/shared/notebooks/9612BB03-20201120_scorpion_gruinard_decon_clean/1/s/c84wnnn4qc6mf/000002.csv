@@ -1,0 +1,4 @@
+"0","ASV.nested$contam.tibble[[1]] %>% as.data.frame() %>% "
+"0","  ggplot(aes(x= vector_contamination))+"
+"0","  geom_histogram() -> vc_plot_1 # Check how it looks"
+"0","ggsave(plot=vc_plot_1,here(""decontam"",""Output_plots"",""Vector_Contamination_Barcode_1.png""), device = ""png"", width = 12, height = 8, units = ""in"")"

@@ -1,0 +1,6 @@
+"0","metadata <- read.table(here(input_meta_path), header = TRUE, sep = ""\t"", stringsAsFactors = F)"
+"0","anacapa_table_1 <- read.table(input_anacapa_path_1, header = 1, sep = ""\t"", stringsAsFactors = F)"
+"0","#Generate Hash.key"
+"0","anacapa_table_1 %>% "
+"0","  dplyr::select(seq_number, sum.taxonomy) -> hash.key"
+"0","saveRDS(hash.key, here(""decontam"",""Output_R"",""hash.key.RDS""))"

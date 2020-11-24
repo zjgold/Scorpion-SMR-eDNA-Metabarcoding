@@ -1,0 +1,25 @@
+"0","```r
+mpa_taylor <- read.table(input_biom_path, header = 1, sep = \"\t\", stringsAsFactors = F)
+mpa_taylor$Miseq_run <- \"miu\"
+miu_names <- colnames(mpa_taylor)
+#Merge All Tables
+ASV.table <- mpa_taylor
+#Format for Long Data
+ASV.table$seq_number <- factor(ASV.table$seq_number)
+ASV.table$Miseq_run <- factor(ASV.table$Miseq_run)
+columns <- colnames(ASV.table)
+remove <- c(\"seq_number\",\"sum.taxonomy\",\"Miseq_run\")
+gathercols <-  columns[! columns %in% remove] 
+# Convert to Long Data
+ASV.table <- gather(ASV.table, sample, reads, gathercols, factor_key=TRUE)
+```"
+"1","Note: Using an external vector in selections is ambiguous.
+[34mℹ[39m Use `all_of(gathercols)` instead of `gathercols` to silence this message.
+[34mℹ[39m See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.
+[90mThis message is displayed once per session.[39m
+"
+"0","```r
+ASV.table$reads <- as.numeric(ASV.table$reads)
+metadata <- read.table(input_meta_path, header = 1, sep = \"\t\", stringsAsFactors = F)
+Hash.key <- read.table(input_hash_path, header = 1, sep = \"\t\", stringsAsFactors = F)
+```"

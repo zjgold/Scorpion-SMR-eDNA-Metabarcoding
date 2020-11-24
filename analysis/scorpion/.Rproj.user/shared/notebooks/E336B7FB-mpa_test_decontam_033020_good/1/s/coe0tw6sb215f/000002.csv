@@ -1,0 +1,10 @@
+"0","```r
+how.many <- function(ASVtable, round){
+  ASVtable %>% ungroup() %>% 
+    dplyr::summarise(nsamples = n_distinct(sample),
+              nHashes = n_distinct(Hash),
+              nReads = sum(nReads), 
+              Stage = paste0(\"Step_\", round)) %>% 
+    gather(starts_with(\"n\"), value = \"number\", key = \"Stat\")
+}
+```"

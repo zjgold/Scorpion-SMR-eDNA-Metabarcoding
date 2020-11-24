@@ -1,0 +1,10 @@
+"0","swchl1_tibble %>% 
+  left_join(sampling_tib_all, by=c(""Year"",""Month"")) %>% 
+  unite(., remove = FALSE, ""year_month"", c(""Year"",""Month"")) %>% 
+  filter(., Year_Group %in% years_to_filter) %>% 
+  group_by(round_Lat,round_Lon,Year_Group) %>% 
+  dplyr::summarise(annual_chla = mean(mean_chla, na.rm = TRUE)) %>% 
+  separate(., Year_Group, into=c(""y"", ""Year""))-> annual_chla
+"
+"2","`summarise()` regrouping output by 'round_Lat', 'round_Lon' (override with `.groups` argument)
+"

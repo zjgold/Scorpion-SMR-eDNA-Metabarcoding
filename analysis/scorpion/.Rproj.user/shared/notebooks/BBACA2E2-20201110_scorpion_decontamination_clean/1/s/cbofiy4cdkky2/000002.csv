@@ -1,0 +1,5 @@
+"1","Note: Using an external vector in selections is ambiguous.
+[34mℹ[39m Use `all_of(gathercols)` instead of `gathercols` to silence this message.
+[34mℹ[39m See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.
+[90mThis message is displayed once per session.[39m
+"

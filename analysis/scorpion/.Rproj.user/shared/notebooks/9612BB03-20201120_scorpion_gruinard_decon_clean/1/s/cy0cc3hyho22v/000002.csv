@@ -1,0 +1,13 @@
+"0","ASV.nested %>% "
+"0","  mutate (contam.tibble = purrr::map(Positives, "
+"0","                                     function(.x){"
+"0","                                       .x %>%"
+"0","                                         ungroup() %>% "
+"0","                                         group_by(sample) %>%"
+"0","                                         mutate (TotalReadsperSample = sum(nReads)) %>%"
+"0","                                         mutate (proportion = nReads/TotalReadsperSample) %>%"
+"0","                                         group_by(seq_number) %>%"
+"0","                                         dplyr::summarise (vector_contamination = max(proportion))"
+"0","                                     }) ) -> ASV.nested"
+"2","`summarise()` ungrouping output (override with `.groups` argument)
+"

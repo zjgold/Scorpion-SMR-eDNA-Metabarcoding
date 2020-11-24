@@ -1,0 +1,529 @@
+"0","library(tidyverse)"
+"0","library(vegan)"
+"0","library(betareg)"
+"0","library(rstanarm)"
+"2","Loading required package: Rcpp
+"
+"2","Registered S3 methods overwritten by 'lme4':
+  method                          from
+  cooks.distance.influence.merMod car 
+  influence.merMod                car 
+  dfbeta.influence.merMod         car 
+  dfbetas.influence.merMod        car 
+"
+"2","This is rstanarm version 2.21.1
+"
+"2","- See https://mc-stan.org/rstanarm/articles/priors for changes to default priors!
+"
+"2","- Default priors may change, so it's safest to specify priors, even if equivalent to the defaults.
+"
+"2","- For execution on a local, multicore CPU with excess RAM we recommend calling
+"
+"2","  options(mc.cores = parallel::detectCores())
+"
+"2","
+Attaching package: ‘rstanarm’
+
+"
+"2","The following object is masked from ‘package:car’:
+
+    logit
+
+"
+"2","The following object is masked from ‘package:rstan’:
+
+    loo
+
+"
+"2","The following object is masked from ‘package:phyloseq’:
+
+    nsamples
+
+"
+"0","  options(mc.cores = parallel::detectCores())"
+"0","library(bayesplot)"
+"0","library(tidybayes)"
+"0","library(modelr)"
+"2","
+Attaching package: ‘modelr’
+
+"
+"2","The following object is masked from ‘package:broom’:
+
+    bootstrap
+
+"
+"2","The following object is masked from ‘package:permute’:
+
+    permute
+
+"
+"0","library(wesanderson)"
+"0","library(metagMisc)"
+"2","
+Attaching package: ‘metagMisc’
+
+"
+"2","The following object is masked from ‘package:car’:
+
+    some
+
+"
+"2","The following object is masked from ‘package:purrr’:
+
+    some
+
+"
+"0","library(phyloseq)"
+"0","library(ggpmisc)"
+"2","
+Attaching package: ‘ggpmisc’
+
+"
+"2","The following object is masked from ‘package:ggplot2’:
+
+    annotate
+
+"
+"0","library(knitr)"
+"0","library(performance)"
+"2","
+Attaching package: ‘performance’
+
+"
+"2","The following objects are masked from ‘package:modelr’:
+
+    mse, rmse
+
+"
+"2","The following object is masked from ‘package:rstanarm’:
+
+    pp_check
+
+"
+"2","The following object is masked from ‘package:bayesplot’:
+
+    pp_check
+
+"
+"0","library(scales)"
+"2","
+Attaching package: ‘scales’
+
+"
+"2","The following object is masked from ‘package:purrr’:
+
+    discard
+
+"
+"2","The following object is masked from ‘package:readr’:
+
+    col_factor
+
+"
+"0","library(ggplot2)"
+"0","library(reshape2)"
+"0","library(maps)"
+"2","
+Attaching package: ‘maps’
+
+"
+"2","The following object is masked from ‘package:purrr’:
+
+    map
+
+"
+"0","library(kriging)"
+"0","library(stringr)"
+"0","library(ggmap)"
+"2","Google's Terms of Service: https://cloud.google.com/maps-platform/terms/.
+"
+"2","Please cite ggmap if you use it! See citation(""ggmap"") for details.
+"
+"2","
+Attaching package: ‘ggmap’
+
+"
+"2","The following object is masked from ‘package:plotly’:
+
+    wind
+
+"
+"0","library(sp)"
+"0","library(rgdal)"
+"2","rgdal: version: 1.5-17, (SVN revision 1070)
+Geospatial Data Abstraction Library extensions to R successfully loaded
+Loaded GDAL runtime: GDAL 3.1.1, released 2020/06/22
+Path to GDAL shared files: /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rgdal/gdal
+GDAL binary built with GEOS: TRUE 
+Loaded PROJ runtime: Rel. 6.3.1, February 10th, 2020, [PJ_VERSION: 631]
+Path to PROJ shared files: /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rgdal/proj
+Linking to sp version:1.4-4
+To mute warnings of possible GDAL/OSR exportToProj4() degradation,
+use options(""rgdal_show_exportToProj4_warnings""=""none"") before loading rgdal.
+"
+"0","library(plyr)"
+"2","------------------------------------------------------------------------------------------------------
+"
+"2","You have loaded plyr after dplyr - this is likely to cause problems.
+If you need functions from both plyr and dplyr, please load plyr first, then dplyr:
+library(plyr); library(dplyr)
+"
+"2","------------------------------------------------------------------------------------------------------
+"
+"2","
+Attaching package: ‘plyr’
+
+"
+"2","The following object is masked from ‘package:maps’:
+
+    ozone
+
+"
+"2","The following objects are masked from ‘package:plotly’:
+
+    arrange, mutate, rename, summarise
+
+"
+"2","The following object is masked from ‘package:here’:
+
+    here
+
+"
+"2","The following objects are masked from ‘package:dplyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise, summarize
+
+"
+"2","The following object is masked from ‘package:purrr’:
+
+    compact
+
+"
+"0","library(phyloseq)"
+"0","library(metagMisc)"
+"0","library(ggdendro)"
+"0","library(rioja)"
+"2","This is rioja 0.9-21
+"
+"2","
+Attaching package: ‘rioja’
+
+"
+"2","The following object is masked from ‘package:performance’:
+
+    performance
+
+"
+"0","library(cluster)"
+"2","
+Attaching package: ‘cluster’
+
+"
+"2","The following object is masked from ‘package:maps’:
+
+    votes.repub
+
+"
+"0","library(gplots) # for heatmaps, heatmap.2"
+"2","
+Attaching package: ‘gplots’
+
+"
+"2","The following object is masked from ‘package:stats’:
+
+    lowess
+
+"
+"0","  library(ranacapa)"
+"0","library(treemapify)"
+"0","library(RColorBrewer)"
+"0","  library(gllvm)"
+"2","Loading required package: TMB
+"
+"2","
+Attaching package: ‘TMB’
+
+"
+"2","The following object is masked from ‘package:shiny’:
+
+    runExample
+
+"
+"2","The following object is masked from ‘package:plotly’:
+
+    config
+
+"
+"2","Loading required package: mvabund
+"
+"2","
+Attaching package: ‘gllvm’
+
+"
+"2","The following object is masked from ‘package:mvabund’:
+
+    coefplot
+
+"
+"2","The following object is masked from ‘package:betareg’:
+
+    predict
+
+"
+"2","The following object is masked from ‘package:vegan’:
+
+    ordiplot
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    predict, simulate
+
+"
+"0","library(lubridate)"
+"2","
+Attaching package: ‘lubridate’
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    date, intersect, setdiff, union
+
+"
+"0","library(dendextend)"
+"2","Registered S3 method overwritten by 'dendextend':
+  method     from 
+  rev.hclust vegan
+"
+"2","
+---------------------
+Welcome to dendextend version 1.14.0
+Type citation('dendextend') for how to cite the package.
+
+Type browseVignettes(package = 'dendextend') for the package vignette.
+The github page is: https://github.com/talgalili/dendextend/
+
+Suggestions and bug-reports can be submitted at: https://github.com/talgalili/dendextend/issues
+Or contact: <tal.galili@gmail.com>
+
+	To suppress this message use:  suppressPackageStartupMessages(library(dendextend))
+---------------------
+
+"
+"2","
+Attaching package: ‘dendextend’
+
+"
+"2","The following object is masked from ‘package:ggdendro’:
+
+    theme_dendro
+
+"
+"2","The following object is masked from ‘package:VennDiagram’:
+
+    rotate
+
+"
+"2","The following object is masked from ‘package:permute’:
+
+    shuffle
+
+"
+"2","The following object is masked from ‘package:stats’:
+
+    cutree
+
+"
+"0","library(cmocean)"
+"0","library(""ggrepel"")"
+"0","  library(xtractomatic)"
+"0","library(ggplot2)"
+"0","library(maptools)"
+"2","Checking rgeos availability: TRUE
+"
+"2","
+Attaching package: ‘maptools’
+
+"
+"2","The following object is masked from ‘package:ggdendro’:
+
+    label
+
+"
+"0","library(reshape2)"
+"0","library(PBSmapping)"
+"2","
+-----------------------------------------------------------
+PBS Mapping 2.72.1 -- Copyright (C) 2003-2020 Fisheries and Oceans Canada
+
+PBS Mapping comes with ABSOLUTELY NO WARRANTY;
+for details see the file COPYING.
+This is free software, and you are welcome to redistribute
+it under certain conditions, as outlined in the above file.
+
+A complete user guide 'PBSmapping-UG.pdf' is located at 
+/Library/Frameworks/R.framework/Versions/4.0/Resources/library/PBSmapping/doc/PBSmapping-UG.pdf
+
+Packaged on 2019-03-14
+Pacific Biological Station, Nanaimo
+
+All available PBS packages can be found at
+https://github.com/pbs-software
+
+To see demos, type '.PBSfigs()'.
+-----------------------------------------------------------
+
+
+"
+"0","library(sp)"
+"0","library(mapproj)"
+"0","library(plyr)"
+"0","library(data.table)"
+"2","data.table 1.13.2 using 1 threads (see ?getDTthreads).  Latest news: r-datatable.com
+"
+"2","**********
+This installation of data.table has not detected OpenMP support. It should still work but in single-threaded mode.
+This is a Mac. Please read https://mac.r-project.org/openmp/. Please engage with Apple and ask them for support. Check r-datatable.com for updates, and our Mac instructions here: https://github.com/Rdatatable/data.table/wiki/Installation. After several years of many reports of installation problems on Mac, it's time to gingerly point out that there have been no similar problems on Windows or Linux.
+**********
+"
+"2","
+Attaching package: ‘data.table’
+
+"
+"2","The following object is masked from ‘package:dendextend’:
+
+    set
+
+"
+"2","The following objects are masked from ‘package:lubridate’:
+
+    hour, isoweek, mday, minute, month, quarter, second, wday, week, yday, year
+
+"
+"2","The following objects are masked from ‘package:reshape2’:
+
+    dcast, melt
+
+"
+"2","The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+"
+"2","The following object is masked from ‘package:purrr’:
+
+    transpose
+
+"
+"0","library(rgeos)"
+"2","rgeos version: 0.5-5, (SVN revision 640)
+ GEOS runtime version: 3.8.1-CAPI-1.13.3 
+ Linking to sp version: 1.4-2 
+ Polygon checking: TRUE 
+
+"
+"0","library(ggmap)"
+"0","library(rgdal)"
+"0","library(spatstat)"
+"2","Loading required package: spatstat.data
+"
+"2","Loading required package: nlme
+"
+"2","
+Attaching package: ‘nlme’
+
+"
+"2","The following object is masked from ‘package:dplyr’:
+
+    collapse
+
+"
+"2","Loading required package: rpart
+"
+"2","
+Attaching package: ‘rpart’
+
+"
+"2","The following object is masked from ‘package:dendextend’:
+
+    prune
+
+"
+"2","Registered S3 method overwritten by 'spatstat':
+  method     from
+  print.boxx cli 
+"
+"2","
+spatstat 1.64-1       (nickname: ‘Help you I can, yes!’) 
+For an introduction to spatstat, type ‘beginner’ 
+
+"
+"2","
+Note: spatstat version 1.64-1 is out of date by more than 6 months; we recommend upgrading to the latest version.
+"
+"2","
+Attaching package: ‘spatstat’
+
+"
+"2","The following object is masked from ‘package:data.table’:
+
+    shift
+
+"
+"2","The following object is masked from ‘package:dendextend’:
+
+    rotate
+
+"
+"2","The following object is masked from ‘package:gplots’:
+
+    col2hex
+
+"
+"2","The following object is masked from ‘package:cluster’:
+
+    volume
+
+"
+"2","The following object is masked from ‘package:scales’:
+
+    rescale
+
+"
+"2","The following object is masked from ‘package:tidybayes’:
+
+    parameters
+
+"
+"2","The following object is masked from ‘package:rstanarm’:
+
+    dirichlet
+
+"
+"2","The following objects are masked from ‘package:VennDiagram’:
+
+    ellipse, rotate
+
+"
+"2","The following objects are masked from ‘package:car’:
+
+    bc, ellipse
+
+"
+"2","The following object is masked from ‘package:MASS’:
+
+    area
+
+"
+"2","The following object is masked from ‘package:lattice’:
+
+    panel.histogram
+
+"
+"0","library(vegan)"
+"0","  library(maps)"
+"0","library(maptools)"
+"0","library(ggplot2)"
+"0","library(grid)"
+"0","library(""legendMap"")"

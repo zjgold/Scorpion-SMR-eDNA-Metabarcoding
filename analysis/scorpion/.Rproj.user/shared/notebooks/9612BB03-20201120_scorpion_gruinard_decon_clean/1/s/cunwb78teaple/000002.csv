@@ -1,0 +1,49 @@
+"0","ASV.nested %>% "
+"0","  dplyr::select(Miseq_run, Step1.cleaned.tibble) %>% "
+"0","  unnest(Step1.cleaned.tibble) %>% "
+"0","  group_by(Miseq_run,sample) %>%"
+"0","  dplyr::summarise(tot = sum(nReads)) %>% "
+"0","  arrange(desc(tot))-> all.reps"
+"2","`summarise()` regrouping output by 'Miseq_run' (override with `.groups` argument)
+"
+"0","all.reps %>%  "
+"0","  pull(tot) -> reads.per.sample"
+"0","names(reads.per.sample) <- all.reps %>% pull(sample)  "
+"0","### Fit Normal Distribution"
+"0","fit <- fitdist(reads.per.sample, ""gamma"", lower=c(0,0), start=list(scale=1,shape=1))"
+"2","NaNs produced"
+"2","NaNs produced"
+"0","all.reps %>%  "
+"0","  mutate(prob = pgamma(tot, shape = fit$estimate[[2]], scale = fit$estimate[[1]], lower.tail = TRUE,"
+"0","       log.p = FALSE)) -> all.reps"
+"0","### Remove Outlier Samples"
+"0","outliers <- all.reps %>% "
+"0","  filter(prob < low_dist_probability_cutoff  | tot < minimum_read_cutoff) # changed to 0.05 to save the two samples"
+"0","ASV.nested %>% "
+"0","  mutate(Step.2.low.read.depth = purrr::map (Step1.cleaned.tibble, ~ filter(.,!sample %in% outliers$sample) %>% ungroup)) -> ASV.nested"
+"0","ASV.nested %>% "
+"0","  transmute(Miseq_run, Summary.1 = purrr::map(Step.2.low.read.depth, ~ how.many(ASVtable = .,round = ""2.Low.Read.Depth""))) %>% "
+"0","  left_join(ASV.summary) %>% "
+"0","  mutate(Summary   = map2(Summary, Summary.1, bind_rows)) %>%"
+"0","  dplyr::select(-Summary.1) -> ASV.summary "
+"2","Joining, by = ""Miseq_run""
+"
+"0","ASV.summary$Summary"
+"1","[[1]]
+"
+"1","[38;5;246m# A tibble: 9 x 3[39m
+  Stage                 Stat      number
+  [3m[38;5;246m<chr>[39m[23m                 [3m[38;5;246m<chr>[39m[23m      [3m[38;5;246m<dbl>[39m[23m
+[38;5;250m1[39m Step_0                nsamples      63
+[38;5;250m2[39m Step_0                nHashes     [4m1[24m060
+[38;5;250m3[39m Step_0                nReads   9[4m4[24m[4m9[24m[4m0[24m138
+[38;5;250m4[39m Step_1.Jump           nsamples      63
+[38;5;250m5[39m Step_1.Jump           nHashes     [4m1[24m058
+[38;5;250m6[39m Step_1.Jump           nReads   9[4m3[24m[4m5[24m[4m0[24m776
+[38;5;250m7[39m Step_2.Low.Read.Depth nsamples      63
+[38;5;250m8[39m Step_2.Low.Read.Depth nHashes     [4m1[24m058
+[38;5;250m9[39m Step_2.Low.Read.Depth nReads   9[4m3[24m[4m5[24m[4m0[24m776"
+"1","
+"
+"1","
+"

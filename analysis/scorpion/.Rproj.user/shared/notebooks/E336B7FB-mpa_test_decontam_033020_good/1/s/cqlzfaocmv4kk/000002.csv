@@ -1,0 +1,51 @@
+"0","```r
+#Remove Singletons (since we can not use them ever)
+#ASV.table %>%
+#  dplyr::group_by(seq_number) %>%
+#  mutate (TotalReadsperSample = sum(reads)) %>% 
+#  filter(., TotalReadsperSample > 1) %>% 
+#  dplyr::select(-TotalReadsperSample) -> ASV.table
+#Create list of control samples
+metadata %>% 
+  filter(Sample_Control==\"control\") %>% 
+  dplyr::select(Samples) -> controls
+controls <- controls$Samples
+metadata %>% 
+  filter(Control_type==\"Pos\") %>% 
+  dplyr::select(Samples) -> pos_controls
+pos_controls <- pos_controls$Samples
+metadata %>% 
+  filter(Control_type==\"Neg\") %>% 
+  dplyr::select(Samples) -> neg_controls
+neg_controls <- neg_controls$Samples
+#Create list of Taylor and MPA Samples
+metadata %>% 
+  filter(Site==\"Taylor\") %>% 
+  dplyr::select(Samples) -> Taylor_samples
+ Taylor_samples <-  Taylor_samples$Samples
+#New column that labels each ASV as from Positive (control) or Sample
+ASV.table %>% 
+  mutate(source = case_when(sample %in% pos_controls~\"Positives\",
+                            sample %in% neg_controls~\"Blanks\",
+                             TRUE ~\"Samples\")) -> ASV.table
+  
+#Convert to tibble
+ASV.table <- as_tibble(ASV.table)
+#Remove empty sequences
+ASV.table %>% 
+  filter(reads != 0)  -> ASV.table
+#Rename Columns and remove seq_number
+ASV.table %>%
+  mutate(Hash = as.character(seq_number),
+         sample = as.character(sample),
+         nReads = reads) %>% 
+  dplyr::select(-seq_number)  -> ASV.table
+ASV.table %>% 
+  filter (source != \"Samples\") %>%
+  dplyr::group_by(Hash) %>% 
+  dplyr::summarise(tot = sum(reads)) %>% 
+  arrange(desc(tot)) %>% 
+  pull(Hash) -> all.seqs.in.ctrls
+Hash.key %>% 
+  filter(seq_number %in% all.seqs.in.ctrls) %>% as.tibble() -> contam.species
+```"

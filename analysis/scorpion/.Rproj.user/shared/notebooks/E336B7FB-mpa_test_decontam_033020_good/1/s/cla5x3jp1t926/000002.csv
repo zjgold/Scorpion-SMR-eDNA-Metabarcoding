@@ -1,0 +1,14 @@
+"0","```r
+ASV.table %>% 
+  filter(!sample %in% Taylor_samples) %>% 
+  dplyr::group_by(Miseq_run, source) %>% 
+  nest() %>% 
+  pivot_wider(names_from=source, values_from=data) -> ASV.nested.mpa_1
+
+ASV.nested.mpa_1 %>%  
+  ungroup() %>%  
+  dplyr::transmute(.,Miseq_run,Summary = purrr::map(Samples, ~ how.many(ASVtable = ., round = 0)))  -> ASV.summary.mpa_1
+
+ASV.summary.mpa_1$Summary
+
+```"

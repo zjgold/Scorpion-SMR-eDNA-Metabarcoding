@@ -1,0 +1,44 @@
+sum.taxonomy,Edge,MPA,Outside,Taylor
+,0.9898698107439721,0.7141230752329181,0.5687198477384183,1
+Eukaryota;Chordata;Actinopteri;;Embiotocidae;Embiotoca;Embiotoca jacksoni,1,0.5035805643560481,0.8187141582049523,0.310654205527186
+Eukaryota;Chordata;Actinopteri;;Embiotocidae;Rhacochilus;Rhacochilus vacca,0.42719926003291525,0.24449149477555734,1,0
+Eukaryota;Chordata;Actinopteri;;Pomacentridae;Chromis;Chromis punctipinnis,1,0.2405129589977188,0.3472078824394929,0.2555989676485445
+Eukaryota;Chordata;Actinopteri;Anguilliformes;Muraenidae;Gymnothorax;Gymnothorax mordax,0.3534357544578252,0.26087960591774584,0.9316241277058015,1
+Eukaryota;Chordata;Actinopteri;Atheriniformes;Atherinopsidae;Atherinops;Atherinops affinis,0.5402287036994092,0.23676763103240586,1,0.7783808049433453
+Eukaryota;Chordata;Actinopteri;Beloniformes;Exocoetidae;Cheilopogon;Cheilopogon pinnatibarbatus,0.4665511715588764,0.21702091178764402,0.38609490816007214,1
+Eukaryota;Chordata;Actinopteri;Blenniiformes;Blenniidae;Hypsoblennius;Hypsoblennius jenkinsi,0.3608130287687775,0,0.32916704553752973,1
+Eukaryota;Chordata;Actinopteri;Blenniiformes;Clinidae;Gibbonsia;,0.13435052289823898,0.03924436148782019,0.20752611494889522,1
+Eukaryota;Chordata;Actinopteri;Blenniiformes;Clinidae;Gibbonsia;Gibbonsia montereyensis,1,0,0.9465614701809348,0
+Eukaryota;Chordata;Actinopteri;Blenniiformes;Clinidae;Heterostichus;Heterostichus rostratus,0.311647453182778,1,0.45472693563737554,0.6204950834780015
+Eukaryota;Chordata;Actinopteri;Blenniiformes;Gobiesocidae;Gobiesox;Gobiesox rhessodon,0.5951942365378217,0,0.4344261393592738,1
+Eukaryota;Chordata;Actinopteri;Blenniiformes;Gobiesocidae;Rimicola;Rimicola muscarum,0,0.7514451332493571,1,0.7398960010852607
+Eukaryota;Chordata;Actinopteri;Blenniiformes;Labrisomidae;Paraclinus;Paraclinus integripinnis,0,0,0.35196542013487486,1
+Eukaryota;Chordata;Actinopteri;Carangiformes;Carangidae;Seriola;Seriola lalandi,0.20873287231887586,0,0.8710145801656729,1
+Eukaryota;Chordata;Actinopteri;Carangiformes;Carangidae;Trachurus;Trachurus symmetricus,0.5982164539946798,1,0.20771858318457836,0.9194244710963365
+Eukaryota;Chordata;Actinopteri;Centrarchiformes;Kyphosidae;Girella;Girella nigricans,0.22855864869830245,1,0.7796468750699654,0.6441423116779569
+Eukaryota;Chordata;Actinopteri;Centrarchiformes;Kyphosidae;Medialuna;Medialuna californiensis,0.921549728283215,0.974895228574206,1,0.11876960065476289
+Eukaryota;Chordata;Actinopteri;Clupeiformes;Clupeidae;Sardinops;Sardinops sagax,1,0.12036078265934906,0.6697372515681725,0.5250557940468416
+Eukaryota;Chordata;Actinopteri;Clupeiformes;Engraulidae;Engraulis;Engraulis mordax,1,0.602822500519716,0.10405320591430116,0.40628557205570287
+Eukaryota;Chordata;Actinopteri;Gobiiformes;Gobiidae;Rhinogobiops;Rhinogobiops nicholsii,0.8281003644559091,0.37451178691166503,1,0.647750584274904
+Eukaryota;Chordata;Actinopteri;Labriformes;Labridae;Halichoeres;Halichoeres semicinctus,0.19662640476832113,0.11121083610128356,0.1380081570463617,1
+Eukaryota;Chordata;Actinopteri;Labriformes;Labridae;Oxyjulis;Oxyjulis californica,0.598269500822316,1,0.25607651146402355,0.01734433046698075
+Eukaryota;Chordata;Actinopteri;Labriformes;Labridae;Semicossyphus;Semicossyphus pulcher,0.4941081311469508,0.6248699845135511,0.47813332821478277,1
+Eukaryota;Chordata;Actinopteri;NA;Embiotocidae;Brachyistius;Brachyistius frenatus,0,1,0.22382330874851822,0
+Eukaryota;Chordata;Actinopteri;NA;Malacanthidae;Caulolatilus;Caulolatilus princeps,1,0.16709811461711854,0.24059058912902442,0
+Eukaryota;Chordata;Actinopteri;NA;Pomacentridae;Hypsypops;Hypsypops rubicundus,0.3149003181066519,0.1163927622331993,0.24687304849335354,1
+Eukaryota;Chordata;Actinopteri;NA;Sciaenidae;Cheilotrema;Cheilotrema saturnum,1,0.32254954071988146,0.7102067945229202,0
+Eukaryota;Chordata;Actinopteri;NA;Sphyraenidae;Sphyraena;Sphyraena argentea,1,0.3806949595257564,0.9526114264267632,0.33755337656587886
+Eukaryota;Chordata;Actinopteri;Pempheriformes;Polyprionidae;Stereolepis;Stereolepis gigas,1,0.2428736452615383,0.5146399959766788,0
+Eukaryota;Chordata;Actinopteri;Perciformes;Cottidae;Chitonotus;Chitonotus pugetensis,1,0,0,0
+Eukaryota;Chordata;Actinopteri;Perciformes;Cottidae;Ruscarius;Ruscarius creaseri,1,0.2271852593240824,0.4357604509415564,0.8068777149718864
+Eukaryota;Chordata;Actinopteri;Perciformes;Hexagrammidae;Oxylebius;Oxylebius pictus,1,0,0.18278611089843663,0
+Eukaryota;Chordata;Actinopteri;Perciformes;Scorpaenidae;Scorpaenodes;Scorpaenodes xyris,0,1,0.3073002870400438,0.7424894530097758
+Eukaryota;Chordata;Actinopteri;Perciformes;Sebastidae;Sebastes;,1,0.10859968707696342,0.16622867387112455,0
+Eukaryota;Chordata;Actinopteri;Perciformes;Serranidae;Paralabrax;Paralabrax clathratus,0.5346615300409561,1,0.8828888339228651,0.5402233048321187
+Eukaryota;Chordata;Actinopteri;Pleuronectiformes;Paralichthyidae;Citharichthys;Citharichthys sordidus,0.17100874373101105,0.36190723517422196,1,0.12401355246478635
+Eukaryota;Chordata;Actinopteri;Pleuronectiformes;Paralichthyidae;Citharichthys;Citharichthys stigmaeus,1,0.27930696995867654,0.4519384290096905,0.43295882815971026
+Eukaryota;Chordata;Actinopteri;Pleuronectiformes;Paralichthyidae;Paralichthys;Paralichthys californicus,1,0.709912089348873,0.22831259448613955,0.43107573795177767
+Eukaryota;Chordata;Actinopteri;Pleuronectiformes;Paralichthyidae;Xystreurys;Xystreurys liolepis,1,0.47558859464162845,0,0
+Eukaryota;Chordata;Actinopteri;Tetraodontiformes;Balistidae;Balistes;Balistes polylepis,1,0,0.1674595024763332,0
+Eukaryota;Chordata;Chondrichthyes;Heterodontiformes;Heterodontidae;Heterodontus;Heterodontus francisci,0.999514369529404,0,0.9728239278132386,1
+Eukaryota;Chordata;Chondrichthyes;Myliobatiformes;Myliobatidae;Myliobatis;Myliobatis californica,1,0.3511919127926691,0.6734910354312356,0.5120982234637853

@@ -1,0 +1,63 @@
+"0","betadisper(d_carn, getElement(sampledf, ""Site""))"
+"1","
+"
+"1","	Homogeneity of multivariate dispersions
+"
+"1","
+"
+"1","Call: betadisper(d = d_carn, group = getElement(sampledf, ""Site""))
+"
+"1","
+No. of Positive Eigenvalues: 22"
+"1","
+No. of Negative Eigenvalues: 4"
+"1","
+
+"
+"1","Average distance to median:
+"
+"1","   Edge "
+"1","    MPA "
+"1","Outside "
+"1","
+"
+"1"," 0.4211 "
+"1"," 0.4183 "
+"1"," 0.4267 "
+"1","
+"
+"1","
+"
+"1","Eigenvalues for PCoA axes:
+"
+"1","(Showing 8 of 26 eigenvalues)
+"
+"1"," PCoA1 "
+"1"," PCoA2 "
+"1"," PCoA3 "
+"1"," PCoA4 "
+"1"," PCoA5 "
+"1"," PCoA6 "
+"1"," PCoA7 "
+"1"," PCoA8 "
+"1","
+"
+"1","1.3799 "
+"1","0.7260 "
+"1","0.6124 "
+"1","0.5200 "
+"1","0.4064 "
+"1","0.3914 "
+"1","0.3445 "
+"1","0.2927 "
+"1","
+"
+"0","broom::tidy(TukeyHSD(betadisper(d_carn, getElement(sampledf, ""Site""))))"
+"1","[38;5;246m# A tibble: 3 x 7[39m
+  term  contrast     null.value estimate conf.low conf.high adj.p.value
+  [3m[38;5;246m<chr>[39m[23m [3m[38;5;246m<chr>[39m[23m             [3m[38;5;246m<dbl>[39m[23m    [3m[38;5;246m<dbl>[39m[23m    [3m[38;5;246m<dbl>[39m[23m     [3m[38;5;246m<dbl>[39m[23m       [3m[38;5;246m<dbl>[39m[23m
+[38;5;250m1[39m group MPA-Edge              0 -[31m0[39m[31m.[39m[31m00[39m[31m2[4m8[24m[4m0[24m[39m  -[31m0[39m[31m.[39m[31m0[39m[31m94[4m4[24m[39m    0.088[4m8[24m       0.997
+[38;5;250m2[39m group Outside-Edge          0  0.005[4m6[24m[4m1[24m  -[31m0[39m[31m.[39m[31m0[39m[31m86[4m0[24m[39m    0.097[4m2[24m       0.987
+[38;5;250m3[39m group Outside-MPA           0  0.008[4m4[24m[4m1[24m  -[31m0[39m[31m.[39m[31m0[39m[31m83[4m2[24m[39m    0.100        0.971"
+"1","
+"

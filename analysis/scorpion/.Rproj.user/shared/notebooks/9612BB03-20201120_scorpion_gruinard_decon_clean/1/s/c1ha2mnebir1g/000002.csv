@@ -1,0 +1,6 @@
+"0","combined_index$number <- rownames(combined_index)"
+"0","combined_index %>% "
+"0","  left_join(hash.key.updated.2, by=""number"") %>% "
+"0","  dplyr::select(-number,-seq_number) -> combined_index"
+"0","saveRDS(combined_index,file=here(""decontam"",""Output_R"",""pre_occupancy_results_sum.taxonomy_tech_reps_separate_eDNA_index.RDS""))"
+"0","write_csv(combined_index ,here(""decontam"",""Output_csv"",""pre_occupancy_results_sum.taxonomy_tech_reps_separate_eDNA_index.csv""))"

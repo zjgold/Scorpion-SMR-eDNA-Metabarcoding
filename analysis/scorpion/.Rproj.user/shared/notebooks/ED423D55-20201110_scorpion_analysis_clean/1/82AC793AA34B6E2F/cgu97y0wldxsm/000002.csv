@@ -1,0 +1,83 @@
+"0","betadisper(d_carn, getElement(sampledf, ""Location""))"
+"1","
+"
+"1","	Homogeneity of multivariate dispersions
+"
+"1","
+"
+"1","Call: betadisper(d = d_carn, group = getElement(sampledf, ""Location""))
+"
+"1","
+No. of Positive Eigenvalues: 22"
+"1","
+No. of Negative Eigenvalues: 4"
+"1","
+
+"
+"1","Average distance to median:
+"
+"1","  LSC_A "
+"1","  LSC_B "
+"1","  LSC_C "
+"1","PedRF_A "
+"1","PedRF_B "
+"1","PedRF_C "
+"1","   PP_A "
+"1","   PP_B "
+"1","   PP_C "
+"1","
+"
+"1"," 0.3924 "
+"1"," 0.3782 "
+"1"," 0.3334 "
+"1"," 0.3875 "
+"1"," 0.3949 "
+"1"," 0.2966 "
+"1"," 0.2854 "
+"1"," 0.2866 "
+"1"," 0.3134 "
+"1","
+"
+"1","
+"
+"1","Eigenvalues for PCoA axes:
+"
+"1","(Showing 8 of 26 eigenvalues)
+"
+"1"," PCoA1 "
+"1"," PCoA2 "
+"1"," PCoA3 "
+"1"," PCoA4 "
+"1"," PCoA5 "
+"1"," PCoA6 "
+"1"," PCoA7 "
+"1"," PCoA8 "
+"1","
+"
+"1","1.3799 "
+"1","0.7260 "
+"1","0.6124 "
+"1","0.5200 "
+"1","0.4064 "
+"1","0.3914 "
+"1","0.3445 "
+"1","0.2927 "
+"1","
+"
+"0","broom::tidy(TukeyHSD(betadisper(d_carn, getElement(sampledf, ""Location""))))"
+"1","[38;5;246m# A tibble: 36 x 7[39m
+   term  contrast      null.value estimate conf.low conf.high adj.p.value
+   [3m[38;5;246m<chr>[39m[23m [3m[38;5;246m<chr>[39m[23m              [3m[38;5;246m<dbl>[39m[23m    [3m[38;5;246m<dbl>[39m[23m    [3m[38;5;246m<dbl>[39m[23m     [3m[38;5;246m<dbl>[39m[23m       [3m[38;5;246m<dbl>[39m[23m
+[38;5;250m 1[39m group LSC_B-LSC_A            0 -[31m0[39m[31m.[39m[31m0[39m[31m14[4m2[24m[39m    -[31m0[39m[31m.[39m[31m290[39m     0.261       1.00 
+[38;5;250m 2[39m group LSC_C-LSC_A            0 -[31m0[39m[31m.[39m[31m0[39m[31m59[4m0[24m[39m    -[31m0[39m[31m.[39m[31m334[39m     0.216       0.997
+[38;5;250m 3[39m group PedRF_A-LSC_A          0 -[31m0[39m[31m.[39m[31m00[39m[31m4[4m9[24m[4m3[24m[39m   -[31m0[39m[31m.[39m[31m280[39m     0.270       1.00 
+[38;5;250m 4[39m group PedRF_B-LSC_A          0  0.002[4m5[24m[4m0[24m   -[31m0[39m[31m.[39m[31m273[39m     0.278       1    
+[38;5;250m 5[39m group PedRF_C-LSC_A          0 -[31m0[39m[31m.[39m[31m0[39m[31m95[4m8[24m[39m    -[31m0[39m[31m.[39m[31m371[39m     0.179       0.941
+[38;5;250m 6[39m group PP_A-LSC_A             0 -[31m0[39m[31m.[39m[31m107[39m     -[31m0[39m[31m.[39m[31m382[39m     0.168       0.898
+[38;5;250m 7[39m group PP_B-LSC_A             0 -[31m0[39m[31m.[39m[31m106[39m     -[31m0[39m[31m.[39m[31m381[39m     0.169       0.903
+[38;5;250m 8[39m group PP_C-LSC_A             0 -[31m0[39m[31m.[39m[31m0[39m[31m79[4m0[24m[39m    -[31m0[39m[31m.[39m[31m354[39m     0.196       0.980
+[38;5;250m 9[39m group LSC_C-LSC_B            0 -[31m0[39m[31m.[39m[31m0[39m[31m44[4m7[24m[39m    -[31m0[39m[31m.[39m[31m320[39m     0.231       1.00 
+[38;5;250m10[39m group PedRF_A-LSC_B          0  0.009[4m3[24m[4m1[24m   -[31m0[39m[31m.[39m[31m266[39m     0.285       1.00 
+[38;5;246m# … with 26 more rows[39m"
+"1","
+"

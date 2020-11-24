@@ -1,0 +1,8 @@
+"0","functional_traits <- read.table(here(""analysis"",""Output"",""20201110_functional_traits_all_species_only.csv""), header = 1, sep = "","", stringsAsFactors = F)"
+"0"," functional_traits %>%  as.tibble() %>% "
+"0","   filter(., Species !="""") -> functional_traits_species_only"
+"2","`as.tibble()` is deprecated as of tibble 2.0.0.
+Please use `as_tibble()` instead.
+The signature and semantics have changed, see `?as_tibble`.
+[90mThis warning is displayed once every 8 hours.[39m
+[90mCall `lifecycle::last_warnings()` to see where this warning was generated.[39m"

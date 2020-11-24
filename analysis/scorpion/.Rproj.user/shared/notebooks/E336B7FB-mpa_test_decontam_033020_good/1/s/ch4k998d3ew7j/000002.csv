@@ -1,0 +1,7 @@
+"0","```r
+setwd(\"/Users/zackgold/Documents/UCLA_phd/Projects/California/General_Channel_Islands/MPA_test_data/input/2020320_analysis/decontam\")
+#Paths to Files
+input_biom_path <- \"/Users/zackgold/Documents/UCLA_phd/Projects/California/General_Channel_Islands/MPA_test_data/input/2020320_analysis/combined_data/c19_fishcard_taxonomy_tables/Summary_by_percent_confidence/60/c19_fishcard_ASV_raw_taxonomy_60_edited.txt\"
+input_meta_path <- \"/Users/zackgold/Documents/UCLA_phd/Projects/California/General_Channel_Islands/MPA_test_data/input/jan_2020_analysis/decontam/mpa_metadata_02042020.txt\"
+input_hash_path <- \"/Users/zackgold/Documents/UCLA_phd/Projects/California/General_Channel_Islands/MPA_test_data/input/2020320_analysis/decontam/mpa_test_hashes_033020.txt\"
+```"

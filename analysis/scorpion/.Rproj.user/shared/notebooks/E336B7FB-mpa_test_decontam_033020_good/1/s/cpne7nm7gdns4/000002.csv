@@ -1,0 +1,17 @@
+"0","```r
+step.1.1_decon$OTUs.removed
+saveRDS(step.1.1_decon, file=\"decon_table\")
+
+saveRDS(ASV.nested, file = \"Cleaning.before.Occ.model\")
+
+ASV.nested %>% 
+  transmute(Miseq_run, Summary.1 = purrr::map(Step2.tibble, ~ how.many(ASVtable = .,round = \"3.Positives\"))) %>%
+  left_join(ASV.summary) %>% 
+  bind_cols(ASV.summary) %>% 
+  mutate(Summary = map2(Summary, Summary.1, bind_rows)) %>%
+  dplyr::select(-Summary.1) -> ASV.summary
+
+ASV.summary$Summary
+saveRDS(ASV.summary, file = \"ASV.summary.rds\")
+
+```"

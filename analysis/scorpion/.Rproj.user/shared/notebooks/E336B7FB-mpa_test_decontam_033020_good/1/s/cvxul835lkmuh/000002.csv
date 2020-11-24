@@ -1,0 +1,19 @@
+"0","```r
+ASV.nested %>% 
+  ungroup() %>% 
+  mutate(cleaned.tibble = map2(Samples, contam.tibble, function(.x,.y){ 
+    .x %>%
+      dplyr::group_by (sample) %>%
+      mutate (TotalReadsperSample = sum (nReads)) %>%
+      left_join(.y, by = \"Hash\") %>%
+      mutate (Updated_nReads = ifelse (!is.na(vector_contamination),  nReads - (ceiling(vector_contamination*TotalReadsperSample)), nReads)) %>%
+      filter (Updated_nReads > 0) %>%
+      ungroup() %>% 
+      dplyr::select (sample, Hash, nReads = Updated_nReads)
+  })) -> ASV.nested
+
+
+ASV.nested$cleaned.tibble %>% as.data.frame() %>% 
+  arrange(desc(nReads)) %>% head(n=100) #Check how they look
+
+```"

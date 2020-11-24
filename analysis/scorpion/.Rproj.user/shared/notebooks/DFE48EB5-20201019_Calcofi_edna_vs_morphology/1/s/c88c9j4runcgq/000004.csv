@@ -1,0 +1,17 @@
+"0","phyloseq_to_df(physeq_obj.step3_counts) %>% 
+  dplyr::select(.,-OTU,-Domain,-Phylum, -Class,-Order,-Family,-Genus) %>%
+  #remove ASVs without species level ID
+  filter(Species != """") %>%
+  gather(.,Sample,nReads, `X1996_4_80_60_1_1`:`X2019_4_93.3_60_1_3`, factor_key=TRUE) %>%
+  left_join(tech_metadata) %>% 
+  dplyr::select(Species,Sample,ext_rep, tech_rep,nReads,Year,Rpt_Line,Rpt_Sta) %>% 
+  unite(station_id, c(""Year"",""Rpt_Line"", ""Rpt_Sta""),remove =FALSE) %>% 
+  unite(Site, c(""Rpt_Line"", ""Rpt_Sta""),remove =FALSE) %>% 
+  dplyr::group_by(station_id,Species) %>%
+  #calculate mean and STDEV
+  full_join(., viz_plus_egg, by = c(""Species"" = ""Species"", ""station_id""=""station_id"")) %>% 
+  na.omit() %>% 
+  dplyr::select(Species, Sample, ext_rep,tech_rep, station_id, Site,Year, nReads, Abundance, Egg_Abundance,total_biomass) -> eDNA_comp.biomass_egg
+"
+"2","Joining, by = ""Sample""
+"

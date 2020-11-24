@@ -1,0 +1,17 @@
+"0","#Generate Vegan formatted data table"
+"0","sampledf_j <- data.frame(sample_data(physeq_obj.occ))"
+"0","carnivore_rel_abun_j<- vegan_otu(physeq_obj.occ)"
+"0","#Bray curtis dissimilarity matrix"
+"0","d_carn_j <- vegdist(carnivore_rel_abun_j, method=""jaccard"", binary=TRUE) "
+"0","#Permanova"
+"0","broom::tidy(adonis(carnivore_rel_abun_j~ sampledf_j$Site+ sampledf_j$Location, method=""jaccard"", binary=TRUE)$aov.tab)"
+"2","The following column names in ANOVA output were not recognized or transformed: SumsOfSqs, MeanSqs, F.Model, R2"
+"1","[38;5;246m# A tibble: 4 x 7[39m
+  term                   df SumsOfSqs MeanSqs F.Model    R2 p.value
+  [3m[38;5;246m<chr>[39m[23m               [3m[38;5;246m<dbl>[39m[23m     [3m[38;5;246m<dbl>[39m[23m   [3m[38;5;246m<dbl>[39m[23m   [3m[38;5;246m<dbl>[39m[23m [3m[38;5;246m<dbl>[39m[23m   [3m[38;5;246m<dbl>[39m[23m
+[38;5;250m1[39m sampledf_j$Site         2     0.951   0.475    3.41 0.212   0.001
+[38;5;250m2[39m sampledf_j$Location     6     1.02    0.170    1.22 0.227   0.093
+[38;5;250m3[39m Residuals              18     2.51    0.140   [31mNA[39m    0.561  [31mNA[39m    
+[38;5;250m4[39m Total                  26     4.48   [31mNA[39m       [31mNA[39m    1      [31mNA[39m    "
+"1","
+"

@@ -1,0 +1,36 @@
+"0","```r
+
+ASV.nested$Step2.tibble %>% 
+  as.data.frame() %>% 
+  mutate(.,seq_number=Hash) %>%  
+  left_join(Hash.key) %>% 
+  dplyr::group_by(sum.taxonomy, sample) %>% 
+  dplyr::summarise(., total_reads = sum(nReads)) %>% #sum by taxonomy per site
+  spread(., key = \"sample\", value = \"total_reads\", fill = 0) -> pre_occ_sum.taxonomy
+
+saveRDS(pre_occ_sum.taxonomy, file = \"preoccupancy.sum.taxonomy.rds\")
+write_csv(pre_occ_sum.taxonomy ,\"preoccupancy.sum.taxonomy.csv\")
+
+mpa_step2.tibble %>% 
+  as.data.frame() %>% 
+  mutate(.,seq_number=Hash) %>%  
+  left_join(Hash.key) %>% 
+  dplyr::group_by(seq_number, sample) %>% 
+  dplyr::summarise(., total_reads = sum(nReads)) %>% #sum by taxonomy per site
+  spread(., key = \"sample\", value = \"total_reads\", fill = 0) -> mpa_pre_occ_ASV
+
+saveRDS(mpa_pre_occ_ASV, file = \"mpa_preoccupancy.ASV.decontam.rds\")
+write_csv(mpa_pre_occ_ASV ,\"mpa_preoccupancy.ASV.decontam.csv\")
+
+
+mpa_step2.tibble %>% 
+  mutate(.,seq_number=Hash) %>%  
+  left_join(Hash.key) %>% 
+  dplyr::group_by(sum.taxonomy, sample) %>% 
+  dplyr::summarise(., total_reads = sum(nReads)) %>% #sum by taxonomy per site
+  spread(., key = \"sample\", value = \"total_reads\", fill = 0) -> sum.taxonomy.mpa
+
+saveRDS(sum.taxonomy.mpa, file = \"mpa_pre_occ.sum.taxonomy.rds\")
+write_csv(sum.taxonomy.mpa ,\"mpa_pre_occ.sum.taxonomy.csv\")
+
+```"

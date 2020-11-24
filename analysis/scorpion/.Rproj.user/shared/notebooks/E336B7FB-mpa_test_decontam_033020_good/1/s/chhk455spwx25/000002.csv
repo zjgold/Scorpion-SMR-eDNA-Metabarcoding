@@ -1,0 +1,11 @@
+"0","```r
+
+ASV.nested$Step2.tibble %>% as.data.frame() %>% filter(., nReads>0) %>% 
+  ungroup() %>% 
+  filter(sample %in% Taylor_samples) -> taylor_step2.tibble
+
+ASV.nested$Step2.tibble %>% as.data.frame() %>% filter(., nReads>0) %>% 
+  ungroup() %>% 
+  filter(!sample %in% Taylor_samples) -> mpa_step2.tibble
+
+```"

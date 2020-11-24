@@ -1,0 +1,44 @@
+"0","#This transformation is for the beta regression modeling."
+"0","#modified from https://hansjoerg.me/2019/05/10/regression-modeling-with-proportion-data-part-1/"
+"0","transform_eDNA_index <- function(eDNA_index) {"
+"0","  # See Cribari-Neto & Zeileis (2010), page 3  https://www.jstatsoft.org/article/view/v034i02"
+"0","  (eDNA_index * (length(eDNA_index) - 1) + 0.5)/length(eDNA_index)"
+"0","}"
+"0","#This long format data table includes data for species that have corresponding larvae abundances. We note that the above species in `a` are also in `b`."
+"0","b <- read.csv(file = ""../data/eDNA_visual_data_comb_larvae_only_site.csv"", row.names =1) %>% "
+"0","  mutate(logAbundance = log(Abundance + 1),"
+"0","         trans_eDNA_index = transform_eDNA_index(eDNA_index))"
+"0","# Phyloseq Object of eDNA Data with eDNA index scores. Technical replicates merged."
+"0","physeq_obj.step3_eIDX_site <-readRDS(file =""../data/physeq_obj.step3_eIDX_site.rds"")"
+"0","# Phyloseq Object of eDNA Data with read counts. Technical replicates merged."
+"0","physeq_obj.step3_counts_site <- readRDS(file =""../data/physeq_obj.step3_counts_site.rds"")"
+"0","#Load Metadata"
+"0","input_meta_path <- ""../data/calcofi_metadata_analysis_062620.csv"""
+"0","metadata <- read.table(input_meta_path, header = 1, sep = "","", stringsAsFactors = F)"
+"0","#Fix names"
+"0","metadata %>% "
+"0","filter(!Cst_Cnt %in% c(30208,30214)) %>% "
+"0","  mutate(sample=paste0(""X"",sample)) %>% "
+"0","  filter(., sample !=""XNA_NA_NA_NA"")->metadata"
+"0","#Always check the eDNA index score calculation"
+"0","b %>% "
+"0","  group_by(Species) %>% "
+"0","  dplyr::summarise(max(eDNA_index))"
+"2","`summarise()` ungrouping output (override with `.groups` argument)
+"
+"1","[38;5;246m# A tibble: 49 x 2[39m
+   Species                  `max(eDNA_index)`
+   [3m[38;5;246m<chr>[39m[23m                                [3m[38;5;246m<dbl>[39m[23m
+[38;5;250m 1[39m Bathylagoides wesethi                    1
+[38;5;250m 2[39m Bathylagus pacificus                     1
+[38;5;250m 3[39m Brosmophycis marginata                   1
+[38;5;250m 4[39m Ceratoscopelus townsendi                 1
+[38;5;250m 5[39m Chauliodus macouni                       1
+[38;5;250m 6[39m Citharichthys                            1
+[38;5;250m 7[39m Cololabis saira                          1
+[38;5;250m 8[39m Diogenichthys atlanticus                 1
+[38;5;250m 9[39m Diogenichthys laternatus                 1
+[38;5;250m10[39m Engraulis mordax                         1
+[38;5;246m# … with 39 more rows[39m"
+"1","
+"

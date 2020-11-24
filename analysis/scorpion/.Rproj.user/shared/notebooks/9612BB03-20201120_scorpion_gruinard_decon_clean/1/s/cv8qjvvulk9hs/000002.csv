@@ -1,0 +1,6 @@
+"0","step.3_barcode1_decon <- decon(data=step.3_barcode1_wide, numb.blanks = blank_num, numb.ind=sample_counter$n, taxa = T,"
+"0","                        runs = step3_runs,"
+"0","                        thresh = step3_thresh,"
+"0","                        prop.thresh = step3_prop.thresh,"
+"0","                        regression = step3_regression)"
+"0","saveRDS(step.3_barcode1_decon, file=here(""decontam"",""step.3_barcode1_decon.RDS""))"

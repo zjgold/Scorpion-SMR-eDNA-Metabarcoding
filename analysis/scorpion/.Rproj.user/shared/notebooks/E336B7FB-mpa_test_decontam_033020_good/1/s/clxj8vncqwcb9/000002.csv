@@ -1,0 +1,10 @@
+"0","```r
+ASV.nested %>% 
+  transmute(Miseq_run, Summary.1 = purrr::map(cleaned.tibble, ~ how.many(ASVtable = .,round = \"1.Jump\"))) %>% 
+  left_join(ASV.summary) %>% #use left join when there are many miseq runs to join
+  bind_cols(ASV.summary) %>% 
+  mutate(Summary   = map2(Summary, Summary.1, bind_rows)) %>%
+  dplyr::select(-Summary.1) -> ASV.summary 
+
+ASV.summary$Summary
+```"

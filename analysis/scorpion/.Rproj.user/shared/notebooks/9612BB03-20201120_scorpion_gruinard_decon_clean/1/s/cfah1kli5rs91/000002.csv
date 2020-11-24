@@ -1,0 +1,11 @@
+"0","ASV.table_used %>% "
+"0","  filter (source == ""Positives"") %>%"
+"0","  dplyr::group_by(seq_number) %>% "
+"0","  dplyr::summarise(tot = sum(reads)) %>% "
+"0","  arrange(desc(tot)) %>% "
+"0","  pull(seq_number) -> all.seqs.in.positives"
+"2","`summarise()` ungrouping output (override with `.groups` argument)
+"
+"0","hash.key %>% "
+"0","  filter(seq_number %in% all.seqs.in.positives) %>% as_tibble() -> pos.contam.species"
+"0","write.csv(pos.contam.species, file=here(""decontam"",""pos.contam.species.csv""))"
