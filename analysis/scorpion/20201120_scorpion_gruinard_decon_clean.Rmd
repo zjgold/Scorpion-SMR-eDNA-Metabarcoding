@@ -138,6 +138,8 @@ ASV.table %>%
   pivot_longer(., cols=gathercols, names_to="sample", values_to="reads") -> ASV.table_long
 
 ASV.table_long$reads <- as.numeric(ASV.table_long$reads)
+
+saveRDS(ASV.table_long, file=here("decontam","ASV.table_long_mpa.RDS"))
 ```
 
 

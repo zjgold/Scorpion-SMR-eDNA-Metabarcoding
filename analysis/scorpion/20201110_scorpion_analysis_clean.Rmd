@@ -28,6 +28,7 @@ library(scales)
 library(gridExtra)
 library(segmented)
 library(knitr)
+library(ranacapa)
 ```
 
 #Load Data
@@ -335,7 +336,7 @@ physeq_obj.pre_reads = filter_taxa(physeq_obj.pre_reads, function(x) mean(x) > 0
 ### Unique ASVs
 
 ```{r}
- ASV.nested %>% 
+ ASV.nested.mpa %>% 
   dplyr::select(Step5.tibble) %>% 
   unnest(Step5.tibble) %>% 
   filter(., !sample %in% Taylor_samples) %>%
